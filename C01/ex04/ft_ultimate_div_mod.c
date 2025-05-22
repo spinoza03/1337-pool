@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilallali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/29 17:21:40 by ilallali          #+#    #+#             */
-/*   Updated: 2024/07/30 17:49:08 by ilallali         ###   ########.fr       */
+/*   Created: 2024/07/27 15:28:32 by ilallali          #+#    #+#             */
+/*   Updated: 2024/07/27 15:46:11 by ilallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strupcase(char *str)
-{
-	int	i;
+#include <unistd.h>
 
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] -= 32;
-		i++;
-	}
-	return (str);
+void	ft_ultimate_div_mod(int *a, int *b)
+{
+	int	c;
+
+	c = *a;
+	*a = *a / *b;
+	*b = c % *b;
 }

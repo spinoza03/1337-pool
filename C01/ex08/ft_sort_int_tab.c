@@ -1,28 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilallali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/29 16:37:57 by ilallali          #+#    #+#             */
-/*   Updated: 2024/07/30 15:29:30 by ilallali         ###   ########.fr       */
+/*   Created: 2024/07/27 19:58:13 by ilallali          #+#    #+#             */
+/*   Updated: 2024/07/27 21:25:10 by ilallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_printable(char *str)
+#include <unistd.h>
+
+void	ft_swap(int *a, int *b )
+{
+	int	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+void	ft_sort_int_tab(int *tab, int size)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	if (str[i] == '\0')
-		return (1);
-	while (str[i])
+	size -= 1;
+	while (i < size)
 	{
-		if (str[i] >= ' ' && str[i] <= '~')
-			i++;
-		else
-			return (0);
+		j = i + 1;
+		while (j <= size)
+		{
+			if (tab[i] > tab[j])
+			{
+				ft_swap(&tab[i], tab[j]);
+			}
+			j++;
+		}
+		i++;
 	}
-	return (1);
 }

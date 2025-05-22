@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilallali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 15:56:04 by ilallali          #+#    #+#             */
-/*   Updated: 2024/07/30 15:33:11 by ilallali         ###   ########.fr       */
+/*   Created: 2024/07/27 16:16:07 by ilallali          #+#    #+#             */
+/*   Updated: 2024/07/27 16:18:36 by ilallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+#include <unistd.h>
+
+void	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (src[i])
+	while (str[i])
 	{
-		dest[i] = src[i];
+		write (1, &str[i], 1);
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
 }

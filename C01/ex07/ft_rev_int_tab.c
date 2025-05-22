@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilallali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 20:45:24 by ilallali          #+#    #+#             */
-/*   Updated: 2024/07/29 16:19:01 by ilallali         ###   ########.fr       */
+/*   Created: 2024/07/27 16:27:36 by ilallali          #+#    #+#             */
+/*   Updated: 2024/07/28 12:15:33 by ilallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_str_is_numeric(char *str)
+void	ft_swap(int *a, int *b )
 {
+	int	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+void	ft_rev_int_tab(int *tab, int size)
+{
+	int	n9s;
 	int	i;
 
+	n9s = size - 1;
 	i = 0;
-	if (str[i] == '\0')
-		return (1);
-	while (str[i])
+	while (i < n9s)
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-			i++;
-		else
-			return (0);
+		ft_swap(&tab[i], &tab[n9s]);
+		i++;
+		n9s--;
 	}
-	return (1);
 }

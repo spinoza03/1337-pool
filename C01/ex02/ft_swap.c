@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilallali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 20:09:21 by ilallali          #+#    #+#             */
-/*   Updated: 2024/07/30 19:07:33 by ilallali         ###   ########.fr       */
+/*   Created: 2024/07/27 15:19:42 by ilallali          #+#    #+#             */
+/*   Updated: 2024/07/27 15:21:46 by ilallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-int	ft_str_is_alpha(char *str)
+void	ft_swap(int *a, int *b)
 {
-	int	i;
+	int	t;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if ((str[i] >= 'a' && str[i] <= 'z')
-			|| (str[i] >= 'A' && str[i] <= 'Z'))
-			i++;
-		else
-			return (0);
-	}
-	return (1);
+	t = *a;
+	*a = *b;
+	*b = t;
 }

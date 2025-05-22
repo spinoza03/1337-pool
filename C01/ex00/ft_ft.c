@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilallali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/29 16:31:48 by ilallali          #+#    #+#             */
-/*   Updated: 2024/07/29 16:33:02 by ilallali         ###   ########.fr       */
+/*   Created: 2024/07/27 15:12:23 by ilallali          #+#    #+#             */
+/*   Updated: 2024/07/27 15:17:52 by ilallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_uppercase(char *str)
-{
-	int	i;
+#include <unistd.h>
 
-	i = 0;
-	if (str[i] == '\0')
-		return (1);
-	while (str[i])
-	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			i++;
-		else
-			return (0);
-	}
-	return (1);
+void	ft_ft(int *nbr)
+{
+	*nbr = 42;
 }
